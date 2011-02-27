@@ -1,0 +1,84 @@
+body {
+	margin: 0 auto;
+}
+
+/* SPLASH/INVITE PAGE STYLES  */
+#splash_background {
+	background-image: url('../images/SPLASH/splash_bg.jpg');
+	repeat: no-repeat;
+	margin: 0px;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	top:0;
+	left: 0;
+	margin: auto;
+	z-index: 0;
+}
+#splash {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 70%;
+	width: 99%;
+	text-align:center;
+	z-index: 2;
+}
+
+#splash_content {
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	top: 45%;
+	left: 0;
+	width: 99%;
+	text-align: center;
+	z-index: 3;
+}
+
+#splash_links {
+	position: absolute;
+	top: 58%;
+	left: 0;
+	width: 99%;
+	text-align: center;
+	z-index: 3;
+}
+
+.splash_icons {
+	border: 0;
+	height: 2%;
+	width: 2%;
+	padding: 2px;
+}
+
+.splashImage {
+	height: 100%;
+	width: 60%;
+}
+
+.splash_email_field {
+	background-image: url('../images/SPLASH/splash_textfield.png');
+	background-repeat:no-repeat;
+	height: 2%;
+	width: %;
+	padding: 10px;
+	font-size: 16px;
+	font-weight: bold;
+	border: 0;
+	color: #206648;
+	vertical-align:middle
+}
+
+.splash_button {
+	height: 3%;
+	width: 3%;
+	vertical-align:middle
+}
+
+/* GENERAL TEXT STYLES */
+
+.successText {
+	color: #206648;
+	font-weight: bold;
+}
