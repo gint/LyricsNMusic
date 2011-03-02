@@ -1,4 +1,8 @@
 LyricsNMusic::Application.routes.draw do
+  get "admin/login"
+
+  match 'authenticate' => 'admin'
+  match 'invites/show' => 'invites#show'
   resources :invites
 
   # The priority is based upon order of creation:
@@ -50,7 +54,7 @@ LyricsNMusic::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "invites#show"
+  root :to => "invites#index"
 
   # See how all your routes lay out with "rake routes"
 

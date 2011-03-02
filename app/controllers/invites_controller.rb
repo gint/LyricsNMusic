@@ -14,12 +14,19 @@ class InvitesController < ApplicationController
   # GET /invites/1
   # GET /invites/1.xml
   def show
-    @invite = Invite.find(params[:id])
+   if !session[:admin_id]
+	redirect_to :controller => 'admin', :action=> 'login'
+ 	
+   else	
+	@title = "View Invitation Emails"
+    @invites = Invite.find_all_emails
+    @total = Invite.get_total_emails
 
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @invite }
     end
+   end
   end
 
   # GET /invites/new

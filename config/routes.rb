@@ -1,4 +1,9 @@
 LyricsNMusic::Application.routes.draw do
+  get "admin/login"
+
+  match 'authenticate' => 'admin'
+  match 'logout' => 'admin'
+  match 'invites/show' => 'invites#show'
   resources :invites
 
   # The priority is based upon order of creation:

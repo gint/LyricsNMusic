@@ -14,5 +14,5 @@ Hello <strong><%=session[:admin_id]%></strong>.
 	<% end %>
 </table>
 <% else %>
-	<p>There are no invitation requests</p>
+	<p>There are no invitation requests
 <% end %>

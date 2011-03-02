@@ -10,6 +10,6 @@ class Invite < ActiveRecord::Base
 	end
 
 	def self.get_total_emails
-		Invite.count(:inviteID, :distinct => true)
+		Invite.count(:id, :distinct => true)
 	end
 end

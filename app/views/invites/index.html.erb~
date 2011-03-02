@@ -8,13 +8,15 @@
 			<%= image_tag('SPLASH/splash_image.png', :class => 'splash_image', :alt => 'LyricsNMusic') %>
 	</div>
 	<div id="splash_form">
-<%= form_for(:invite) :remote=>true do |f| %>
+<%= form_for(:invite) do |f| %>
 	<% if @invite && @invite.errors.any? %>
 	<div id="error_explanation">
 			<span class="errMsg"><%= @invite.errors.full_messages.first %></span>
 	</div>
 	<%elsif flash[:success] %>
-			<p class="successText"><%= flash[:success] %></p>
+		<p class="successText">
+		<%= flash[:success] %><br/>
+		</p>
 	<% end %>
 	<%= f.text_field(:email, :size => '30', :class => 'splash_email_field') %>
 	<%= image_submit_tag("SPLASH/splash_button_go.png", :class => 'splash_button') %>
