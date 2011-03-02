@@ -1,5 +1,6 @@
 class AdminController < ApplicationController
 	def login
+		@title = "Login"
 	end
 
 	def show
