@@ -1,41 +1,25 @@
-<script type="text/javascript">
 
- var _gaq = _gaq || [];
- _gaq.push(['_setAccount', 'UA-21697091-1']);
- _gaq.push(['_trackPageview']);
-
- (function() {
-   var ga = document.createElement('
-script'); ga.type =
-'text/javascript'; ga.async = true;
-   ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
-'http://www') + '.google-analytics.com/ga.js';
-   var s = document.getElementsByTagName('script')[0];
-s.parentNode.insertBefore(ga, s);
- })();
-
-</script>
-
-<div id="splash_background"></div>
-<div id="splash"><%= image_tag('SPLASH/splash_image.png', :class => 'splashImage')%></div>
+<div id="splash_background">
+	<%= image_tag('SPLASH/splash_bg.jpg', :class => 'splash_bg', :alt => 'LyricsNMusic') %>
+</div>
 
 <div id="splash_content">
-	<%= form_for(:invite) do |f| %>
+	<div id="splash_image">
+			<%= image_tag('SPLASH/splash_image.png', :class => 'splash_image', :alt => 'LyricsNMusic') %>
+	</div>
+	<div id="splash_form">
+<%= form_for(:invite) do |f| %>
 	<% if @invite && @invite.errors.any? %>
-    <div id="error_explanation">
-		<ul>
-			<li><%= @invite.errors.full_messages.first %></li>
-		</ul>
+	<div id="error_explanation">
+			<span class="errMsg"><%= @invite.errors.full_messages.first %></span>
 	</div>
 	<%elsif flash[:success] %>
 			<p class="successText"><%= flash[:success] %></p>
 	<% end %>
-	<%= f.text_field(:email,:size => '30', :class => "splash_email_field")%>
+	<%= f.text_field(:email, :size => '30', :class => 'splash_email_field') %>
 	<%= image_submit_tag("SPLASH/splash_button_go.png", :class => 'splash_button') %>
 <% end %>
-</div>
-
-<div id="splash_links">
-		<%= link_to image_tag('SPLASH/splash_icon_t.jpg', :class => 'splash_icons'), "http://twitter.com/LyricsnnMusic", :target => "_blank", :style=> 'margin-left: 40%;' %>		
-		<%= link_to image_tag('SPLASH/splash_icon_fb.jpg', :class => 'splash_icons'), "http://www.facebook.com/pages/Lyrics-N-Music/129045307163582?sk=info", :target => "_blank" %>
-</div>
+	<%= link_to image_tag('SPLASH/splash_icon_t.jpg', :class => 'splash_icons'), "http://twitter.com/LyricsnnMusic", :target => "_blank" %>		
+	<%= link_to image_tag('SPLASH/splash_icon_fb.jpg', :class => 'splash_icons'), "http://www.facebook.com/pages/Lyrics-N-Music/129045307163582?sk=info", :target => "_blank" %>
+	</div>
+</div>	

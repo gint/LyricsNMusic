@@ -59,7 +59,7 @@ img {
 }
 
 .splash_image {
-	width: 62%;
+	width: 64%;
 }
 
 .splash_button {
@@ -68,19 +68,7 @@ img {
 }
 
 .splash_email_field {
-	padding: 5px;
-	background: #B8E6D6;
-	border-top: 2px solid #77AD99;
-	border-left: 2px solid #77AD99;
-	border-right: 1px solid #82BAA7;
-	border-bottom: 1px solid #82BAA7;
-	-webkit-border-radius: 2px;
-	-moz-border-radius: 2px;
-	border-radius: 2px;
-	vertical-align: middle;
-	color: #206648;
-	font-weight: bold;
-	font-size: 160%;
+
 }
 
 .splash_icons {

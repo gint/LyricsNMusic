@@ -1,0 +1,16 @@
+// Place your application-specific JavaScript functions and classes here
+// This file is automatically included by javascript_include_tag :defaults
+
+jQuery(function($) {
+	// when email field loses focus
+	$("#splash_email_field").blur(function() {
+		
+		if()
+		return false;
+	});
+
+	$("#splash_email_field").focus(function() {
+		if(this.val() == )
+		return false;
+	});
+})

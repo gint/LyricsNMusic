@@ -2,6 +2,7 @@ class InvitesController < ApplicationController
   # GET /invites
   # GET /invites.xml
   def index
+	@title = "Invitation";
     @invites = Invite.all
 
     respond_to do |format|
@@ -44,7 +45,7 @@ class InvitesController < ApplicationController
 
     respond_to do |format|
       if @invite.save
-	    flash[:success] = 'Invite was successfully created.'
+	    flash[:success] = 'THANKS FOR SIGNING UP!'
         format.html { render "index" }
         format.xml  { render :action => "index", :xml => @invite, :status => :created }
 		@invite = Invite.new
