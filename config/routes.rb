@@ -5,6 +5,7 @@ LyricsNMusic::Application.routes.draw do
   match 'admin/login' => 'admin#login'
   match 'invites/show' => 'invites#show'
   resources :invites
+  resources :admin
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

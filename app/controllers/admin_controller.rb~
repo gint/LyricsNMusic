@@ -19,7 +19,7 @@ class AdminController < ApplicationController
         #creates a session with username
 			session[:admin_id]=valid_admin.email
         #redirects the user to our private page.
-			redirect_to :controller => 'invites',:action => 'invites/show'
+			redirect_to :controller => 'invites',:action => 'show'
 		else
 			flash[:notice] = "Invalid User/Password"
 			redirect_to :action=> 'login'
