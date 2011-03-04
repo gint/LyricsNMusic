@@ -8,7 +8,11 @@
 		<%= image_tag('SPLASH/splash_image.png', :class => 'splash_image', :alt => 'LyricsNMusic') %>
 	</div>
 	<div id="splash_form">
+    <% if !flash[:success] %>
+		<%= image_tag('SPLASH/splash_image_info.jpg', :class => 'splash_image_info', :alt => 'LyricsNMusic') %>		
+	<% end %>
 <%= form_for(:invite) do |f| %>
+
 	<% if @invite && @invite.errors.any? %>
 	<div id="error_explanation">
 			<span class="errMsg"><%= @invite.errors.full_messages.first %></span>

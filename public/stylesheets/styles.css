@@ -6,7 +6,7 @@
 body {
 	margin: 0;
 	padding: 0;
-	font-size: 62.5%;
+	font-size: 70%;
 }
 
 img {
@@ -49,10 +49,10 @@ img {
 }
 
 #splash_form {
-	position: absolute;
+	position: relative;
 	top: 0px;
 	left: 0px;	
-	margin-top: 22%;
+	margin-top: 18%;
 	z-index: 3;
 	width: 99%;
 	text-align: center;
@@ -60,6 +60,10 @@ img {
 
 .splash_image {
 	width: 62%;
+}
+
+.splash_image_info {
+	width: 30%;
 }
 
 .splash_button {
@@ -80,7 +84,7 @@ img {
 	vertical-align: middle;
 	color: #206648;
 	font-weight: bold;
-	font-size: 160%;
+	font-size: 120%;
 }
 
 .splash_icons {
@@ -98,5 +102,5 @@ img {
 
 /* HACK for splash_form top margin*/
 @media screen and (-webkit-min-device-pixel-ratio:0) {
-#splash_form { margin-top: 22em; }
+#splash_form { margin-top: 18%; }
 }
