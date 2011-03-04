@@ -20,7 +20,7 @@
 		<%= flash[:success] %><br/>
 		Share this with your friends<br/><br/>			
 		</p>
-	<% else %>\
+	<% else %>
 		<%= f.text_field(:email, :size => '30', :class => 'splash_email_field') %>
 		<%= image_submit_tag("SPLASH/splash_button_go.png", :class => 'splash_button') %>		
 	<% end %>
