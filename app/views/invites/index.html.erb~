@@ -5,23 +5,33 @@
 
 <div id="splash_content">
 	<div id="splash_image">
-			<%= image_tag('SPLASH/splash_image.png', :class => 'splash_image', :alt => 'LyricsNMusic') %>
+		<%= image_tag('SPLASH/splash_image.png', :class => 'splash_image', :alt => 'LyricsNMusic') %>
 	</div>
 	<div id="splash_form">
+    <% if !flash[:success] %>
+		<%= image_tag('SPLASH/splash_image_info.jpg', :class => 'splash_image_info', :alt => 'LyricsNMusic') %>		
+	<% end %>
 <%= form_for(:invite) do |f| %>
+
 	<% if @invite && @invite.errors.any? %>
 	<div id="error_explanation">
 			<span class="errMsg"><%= @invite.errors.full_messages.first %></span>
 	</div>
-	<%elsif flash[:success] %>
-		<p class="successText">
-		<%= flash[:success] %><br/>
-		</p>
-	<% end %>
 	<%= f.text_field(:email, :size => '30', :class => 'splash_email_field') %>
 	<%= image_submit_tag("SPLASH/splash_button_go.png", :class => 'splash_button') %>
+<%elsif flash[:success] %>
+		<br/><br/>
+		<p class="successText">
+		<%= flash[:success] %><br/>
+		Share this with your friends<br/><br/>			
+		</p>
+	<% else %>
+		<%= f.text_field(:email, :size => '30', :class => 'splash_email_field') %>
+		<%= image_submit_tag("SPLASH/splash_button_go.png", :class => 'splash_button') %>		
+	<% end %>
 <% end %>
-	<%= link_to image_tag('SPLASH/splash_icon_t.jpg', :class => 'splash_icons'), "http://twitter.com/LyricsnnMusic", :target => "_blank" %>		
-	<%= link_to image_tag('SPLASH/splash_icon_fb.jpg', :class => 'splash_icons'), "http://www.facebook.com/pages/Lyrics-N-Music/129045307163582?sk=info", :target => "_blank" %>
+		<%= link_to image_tag('SPLASH/splash_icon_t.jpg', :class => 'splash_icons'), "http://twitter.com/LyricsnnMusic", :target => "_blank" %>		
+		<%= link_to image_tag('SPLASH/splash_icon_fb.jpg', :class => 'splash_icons'), "http://www.facebook.com/pages/Lyrics-N-Music/129045307163582?sk=info", :target => "_blank" %>
+	    <% if flash[:success] %><%= mail_to 'yourfriend@address.com', image_tag('SPLASH/splash_icon_email.jpg', :class => 'splash_icons'), :subject => 'Check out LyricsNMusic!', :body => 'Join us at LyricsNMusic.com!' %> <% end %>
 	</div>
 </div>	
