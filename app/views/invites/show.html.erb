@@ -6,6 +6,7 @@ Hello <strong><%=session[:admin_id]%></strong>.
 <%= link_to "Logout",:controller => "admin", :action => "logout" %>
 
 <% if (@total != 0) %>
+Total Requested Invitations: <%= @total %>
 <table>
 	<% for invite in @invites %>	
 	<tr>
