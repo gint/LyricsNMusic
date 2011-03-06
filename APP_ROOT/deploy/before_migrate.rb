@@ -1,0 +1,1 @@
+run "echo -e 'production:\n adapter: mysql2\n database: {db}\n username: {user}\n password: {password}\n host: {host}\n reconnect: true' > #{current_path}/config/database.yml"
