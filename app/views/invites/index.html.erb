@@ -18,15 +18,17 @@
 			<span class="errMsg"><%= @invite.errors.full_messages.first %></span>
 	</div>
 	<%= f.text_field(:email, :size => '30', :class => 'splash_email_field') %>
+	<%= f.hidden_field(:email_sent, :value => 'no') %>
 	<%= image_submit_tag("SPLASH/splash_button_go.png", :class => 'splash_button') %>
 <%elsif flash[:success] %>
 		<br/>
 		<p class="successText">
 		<%= flash[:success] %><br/>
-		Share this with your friends<br/><br/>			
-		</p>
+		</p>		
+		<span class="successText_small">Share this with your friends</span><br/><br/>			
 	<% else %>
 		<%= f.text_field(:email, :size => '30', :class => 'splash_email_field') %>
+		<%= f.hidden_field(:email_sent, :value => 'no') %>
 		<%= image_submit_tag("SPLASH/splash_button_go.png", :class => 'splash_button') %>		
 	<% end %>
 <% end %>

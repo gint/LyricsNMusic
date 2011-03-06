@@ -2,6 +2,8 @@
 
 one:
   email: MyString
+  email_sent: MyString
 
 two:
   email: MyString
+  email_sent: MyString

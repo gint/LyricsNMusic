@@ -16,12 +16,16 @@ class InvitesController < ApplicationController
   def show
    if !session[:admin_id]
 	redirect_to :controller => 'admin', :action=> 'login'
- 	
    else	
+	@api_key = PostageApp.config.api_key
+	@api_key = nil if @api_key.blank? || @api_key == 'PROJECT_API_KEY'
 	@title = "View Invitation Emails"
     @invites = Invite.find_all_emails
     @total = Invite.get_total_emails
-
+	@requests = Invite.find_all_emails
+	
+	#send bulk email
+    @response = Mailer.send_mail_invitation(@requests).deliver if request.post?
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @invite }

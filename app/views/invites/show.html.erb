@@ -1,16 +1,34 @@
-
+<br/>
+<p>
 <!--#displays hello (email)-->
 Hello <strong><%=session[:admin_id]%></strong>.
 
 <!--#creates logout link, when the link is clicked, the controller is Admin and the method executed will be logout.-->
 <%= link_to "Logout",:controller => "admin", :action => "logout" %>
-
+</p>
 <% if (@total != 0) %>
-Total Requested Invitations: <%= @total %>
-<table>
+<br/>Total Requested Invitations: <%= @total %>
+<br/><br/>
+<% if @response %>
+  <div class='response'>
+    <pre><%= @response.to_yaml %></pre>
+  </div>
+  <br/>
+<% end%>
+
+	<%= form_tag "/show" do %>
+		<%= submit_tag 'Send Invitations' %>
+	<% end %>
+<br/>
+<table border=1 style="border-collapse:collapse;">
+	<tr>
+		<th>Email</th>
+		<th>Sent</th>		
+	</tr>
 	<% for invite in @invites %>	
 	<tr>
-		<td><%= invite.email %></td>
+		<td style="border: 1px solid #888888;padding: 2px;"><%= invite.email %></td>
+		<td style="border: 1px solid #888888;padding: 2px;"><%= invite.email_sent %></td>
 	</tr>
 	<% end %>
 </table>

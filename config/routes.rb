@@ -4,6 +4,7 @@ LyricsNMusic::Application.routes.draw do
   match 'logout' => 'admin'
   match 'admin/login' => 'admin#login'
   match 'invites/show' => 'invites#show'
+  match '/show' => 'invites#show'
   resources :invites
   resources :admin
 

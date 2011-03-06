@@ -1,5 +1,5 @@
 class Invite < ActiveRecord::Base
-	attr_accessible :email
+	attr_accessible :email, :email_sent
 
 	validates :email, :presence => true,
 				 	  :uniqueness => { :case_sensitive => false },
@@ -10,6 +10,6 @@ class Invite < ActiveRecord::Base
 	end
 
 	def self.get_total_emails
-		Invite.count(:inviteID, :distinct => true)
+		Invite.count(:id, :distinct => true)
 	end
 end

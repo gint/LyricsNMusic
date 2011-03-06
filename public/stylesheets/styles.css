@@ -6,7 +6,7 @@
 body {
 	margin: 0;
 	padding: 0;
-	font-size: 94%;
+	
 }
 
 img {
@@ -84,12 +84,12 @@ img {
 	vertical-align: middle;
 	color: #206648;
 	font-weight: bold;
-	font-size: 120%;
+	font-size: 100%;
 }
 
 .splash_icons {
 	padding: 2px;
-	width: 2%;
+	width: 2.5%;
 }
 
 /* GENERAL TEXT STYLES */
@@ -98,6 +98,14 @@ img {
 	color: #206648;
 	font-family: arial, helvetica;
 	font-weight: bold;
+	font-size: 140%;
+}
+
+.successText_small {
+	color: #206648;
+	font-family: arial, helvetica;
+	font-weight: bold;
+	font-size: 100%;
 }
 
 /* HACK for splash_form top margin*/

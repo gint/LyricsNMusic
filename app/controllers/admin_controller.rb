@@ -22,7 +22,7 @@ class AdminController < ApplicationController
         #redirects the user to our private page.
 			redirect_to :controller => 'invites',:action => 'show'
 		else
-			flash[:notice] = "Invalid User/Password"
+			flash[:notice] = "Invalid Email/Password"
 			redirect_to :action=> 'login'
 		end
 	end

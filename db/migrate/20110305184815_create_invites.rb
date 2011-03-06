@@ -2,6 +2,7 @@ class CreateInvites < ActiveRecord::Migration
   def self.up
     create_table :invites do |t|
       t.string :email
+      t.string :email_sent
 
       t.timestamps
     end
