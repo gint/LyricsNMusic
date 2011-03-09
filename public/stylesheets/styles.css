@@ -88,6 +88,7 @@ img {
 }
 
 .splash_icons {
+	cursor: hand;
 	padding: 2px;
 	width: 2.5%;
 }

@@ -27,10 +27,14 @@
 		<%= flash[:success] %><br/>
 		</p>		
 		<span class="successText_small">Share this with your friends</span><br/><br/>
-		<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.lyricsnmusic.com&amp;layout=button_count&amp;show_faces=true&amp;width=110&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=20" scrolling="no" frameborder="0" style="border:0; overflow:hidden; width:50px; height:20px" allowTransparency="true"></iframe>
-		<a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.lyricsnmusic.com" data-text="Just signed up for a cool Lyric site that is launching soon - Join me" data-count="none" data-via="LyricsnnMusic">Tweet</a>
-		<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-		<%= mail_to 'yourfriend@address.com', image_tag('SPLASH/splash_icon_email.jpg', :style => 'margin-left: 2px;'), :subject => 'Check out LyricsNMusic!', :body => 'Join us at LyricsNMusic.com!' %>
+		<!-- AddThis Button BEGIN -->
+		<div class="addthis_toolbox addthis_default_style" style="border:0; text-decoration:none; padding:0; margin: 0;" addthis:url="http://lyricsnmusic.com" addthis:title="Just signed up for a cool Lyric site that is launching soon - Join me!">
+			<a class="addthis_button_preferred_2" style="padding:0;margin:0;float:none"><%= image_tag('SPLASH/splash_icon_t.jpg', :style => 'width:26px; margin-right: 2px;vertical-align:middle') %></a>
+			<a class="addthis_button_preferred_1" style="padding:0;margin:0;float:none"><%= image_tag('SPLASH/splash_icon_fb.jpg', :style => 'width:26px;vertical-align:middle') %></a>
+				<%= mail_to "yourfriend@address.com", image_tag('SPLASH/splash_icon_email.jpg', :class => 'splash_icons', :style => 'vertical-align:middle'), :subject => "Check out LyricsNMusic.com", :body => "Hey I just signed up for a cool Lyric site that is launching soon! Join me! http://lyricsnmusic.com/"%>
+		</div>
+		<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4d77ae441972215a"></script>
+		<!-- AddThis Button END -->
 	<% else %>
 		<%= f.text_field(:email, :size => '30', :class => 'splash_email_field') %>
 		<%= f.hidden_field(:email_sent, :value => 'no') %>
@@ -38,8 +42,8 @@
 	<% end %>
 <% end %>
 <% if !flash[:success] %>
-		<%= link_to image_tag('SPLASH/splash_icon_t.jpg', :class => 'splash_icons'), "http://twitter.com/LyricsnnMusic", :target => "_blank" %>		
-		<%= link_to image_tag('SPLASH/splash_icon_fb.jpg', :class => 'splash_icons'), "http://www.facebook.com/pages/Lyrics-N-Music/129045307163582?sk=info", :target => "_blank" %>
-	<% end %>
+	<%= link_to image_tag('SPLASH/splash_icon_t.jpg', :class => 'splash_icons'), "http://twitter.com/LyricsnnMusic", :target => "_blank" %>		
+	<%= link_to image_tag('SPLASH/splash_icon_fb.jpg', :class => 'splash_icons'), "http://www.facebook.com/pages/Lyrics-N-Music/129045307163582?sk=info", :target => "_blank" %>
+<% end %>
 	</div>
 </div>	

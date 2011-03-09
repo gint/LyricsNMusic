@@ -2,7 +2,7 @@
   "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
-<head>
+<head>	
 <!-- IGNORE Google Analytics -->
 <script type="text/javascript">
  var _gaq = _gaq || [];
@@ -18,6 +18,16 @@
 </script>				
 
 <title>LyricsNMusic | <%= @title %></title>
+
+<meta property="og:title" content="Just signed up for a cool Lyric site that is launching soon - Join me!"/>
+<meta property="og:description" content="Just signed up for a cool Lyric site that is launching soon - Join me!" />
+<meta property="og:url" content="http://lyricsnmusic.com" />
+<meta property="og:site_name" content="LyricsNMusic" />
+<meta property="og:type" content="website" />
+
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher:'19f68371-6f8d-4c99-b54a-97d40f297ef9'});</script>
+
   <%= csrf_meta_tag %>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag 'jquery-1.4.4.min', 'jquery-ui-1.8.10.custom.min', 'jquery-placeholder.js', 'application' %>
@@ -25,11 +35,19 @@
 <body>
 <%= yield %>
 <script type="text/javascript">
+//JQUERY PLACEHOLDER	
 $("#invite_email").placeHolder({
 	"text": "Your Email Address",
 	"active": "#206648",
 	"placeholder": "#206648"
 });
+
+//ADDTHIS TWITTER TEMPLATE
+var addthis_share = {
+  templates: { twitter: '{{title}} {{url}} @Lyricsnnmusic' }
+}
+
+
 </script>		
 </body>
 </html>
